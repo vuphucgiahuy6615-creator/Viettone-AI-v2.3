@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Islet & shimmering water -->
+  <ellipse cx="90" cy="112" rx="68" ry="12" fill="#FDBA74" fill-opacity="0.35" stroke="#FFF7ED" stroke-width="2"/>
+  <path d="M46 108C58 98 122 98 134 108H46Z" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.2"/>
+  <!-- Turtle Tower (Thap Rua) 3 tiers -->
+  <rect x="64" y="80" width="52" height="24" rx="2" fill="#EA580C" stroke="#FFF7ED" stroke-width="2.5"/>
+  <path d="M74 104V90C74 87 79 87 79 90V104M87 104V90C87 87 93 87 93 90V104M101 104V90C101 87 106 87 106 90V104" stroke="#FFF7ED" stroke-width="2"/>
+  <!-- Tier 2 -->
+  <path d="M56 80L64 73H116L124 80H56Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.2" stroke-linejoin="round"/>
+  <rect x="70" y="54" width="40" height="20" rx="2" fill="#FB923C" stroke="#FFF7ED" stroke-width="2.2"/>
+  <rect x="85" y="60" width="10" height="14" rx="4" fill="#7C2D12" stroke="#FFF7ED" stroke-width="1.8"/>
+  <!-- Tier 3 -->
+  <path d="M64 54L72 47H108L116 54H64Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.2" stroke-linejoin="round"/>
+  <rect x="78" y="34" width="24" height="14" rx="2" fill="#FDBA74" stroke="#FFF7ED" stroke-width="2"/>
+  <path d="M72 34L90 18L108 34H72Z" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.2" stroke-linejoin="round"/>
+  <circle cx="90" cy="16" r="3" fill="#FDE68A" stroke="#FFF7ED" stroke-width="1.6"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <ellipse cx="90" cy="124" rx="76" ry="7" fill="#7C2D12" fill-opacity="0.35"/>
+  <!-- Citadel base wall with 5 arches -->
+  <rect x="20" y="76" width="140" height="44" rx="3" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.5"/>
+  <path d="M36 120V102C36 96 44 96 44 102V120M58 120V100C58 94 66 94 66 100V120M82 120V94C82 87 98 87 98 94V120M114 120V100C114 94 122 94 122 100V120M136 120V102C136 96 144 96 144 102V120" fill="#7C2D12" stroke="#FFF7ED" stroke-width="2"/>
+  <!-- Side pavilions -->
+  <rect x="30" y="60" width="28" height="16" fill="#EA580C" stroke="#FFF7ED" stroke-width="2"/>
+  <path d="M24 60L44 48L64 60H24Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="122" y="60" width="28" height="16" fill="#EA580C" stroke="#FFF7ED" stroke-width="2"/>
+  <path d="M116 60L136 48L156 60H116Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Central Ngu Phung two-tier roof -->
+  <rect x="64" y="48" width="52" height="28" fill="#FB923C" stroke="#FFF7ED" stroke-width="2.2"/>
+  <path d="M54 50C68 44 78 38 90 32C102 38 112 44 126 50H54Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M62 34C74 28 82 22 90 16C98 22 106 28 118 34H62Z" fill="#FDE68A" stroke="#FFF7ED" stroke-width="2.2" stroke-linejoin="round"/>
+</svg>

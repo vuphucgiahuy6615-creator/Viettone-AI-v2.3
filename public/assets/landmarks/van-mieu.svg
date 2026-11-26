@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <ellipse cx="90" cy="126" rx="68" ry="8" fill="#7C2D12" fill-opacity="0.35"/>
+  <!-- Base terrace -->
+  <rect x="34" y="106" width="112" height="16" rx="4" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.5"/>
+  <rect x="44" y="96" width="92" height="10" rx="2" fill="#EA580C" stroke="#FFF7ED" stroke-width="2.5"/>
+  <!-- Lower columns -->
+  <rect x="52" y="68" width="8" height="28" fill="#FDBA74" stroke="#FFF7ED" stroke-width="2"/>
+  <rect x="70" y="68" width="8" height="28" fill="#FDBA74" stroke="#FFF7ED" stroke-width="2"/>
+  <rect x="102" y="68" width="8" height="28" fill="#FDBA74" stroke="#FFF7ED" stroke-width="2"/>
+  <rect x="120" y="68" width="8" height="28" fill="#FDBA74" stroke="#FFF7ED" stroke-width="2"/>
+  <!-- Lower curved roof -->
+  <path d="M28 70C45 64 55 58 64 52H116C125 58 135 64 152 70L142 76H38L28 70Z" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Upper pavilion + round sun window -->
+  <rect x="64" y="34" width="52" height="22" rx="3" fill="#EA580C" stroke="#FFF7ED" stroke-width="2.5"/>
+  <circle cx="90" cy="45" r="8" fill="#FEF3C7" stroke="#FFF7ED" stroke-width="2"/>
+  <path d="M90 35V55M80 45H100M83 38L97 52M97 38L83 52" stroke="#EA580C" stroke-width="1.5"/>
+  <!-- Top curved roof -->
+  <path d="M44 36C62 28 74 20 90 12C106 20 118 28 136 36L126 41H54L44 36Z" fill="#FB923C" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="90" cy="11" r="3.5" fill="#FDE68A" stroke="#FFF7ED" stroke-width="1.8"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Lotus pond -->
+  <ellipse cx="90" cy="116" rx="70" ry="14" fill="#FDBA74" fill-opacity="0.35" stroke="#FFF7ED" stroke-width="2"/>
+  <path d="M42 117C54 113 68 113 80 117M102 118C114 114 128 114 140 118" stroke="#FFF7ED" stroke-width="2" stroke-linecap="round"/>
+  <!-- Single stone pillar -->
+  <rect x="82" y="72" width="16" height="44" rx="3" fill="#FDE68A" stroke="#FFF7ED" stroke-width="2.5"/>
+  <!-- Wooden struts -->
+  <path d="M84 84L60 66M96 84L120 66" stroke="#FFF7ED" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Temple body -->
+  <rect x="54" y="48" width="72" height="24" rx="3" fill="#EA580C" stroke="#FFF7ED" stroke-width="2.5"/>
+  <rect x="80" y="54" width="20" height="18" rx="2" fill="#7C2D12" stroke="#FFF7ED" stroke-width="2"/>
+  <!-- Curved lotus roof -->
+  <path d="M32 50C50 44 64 30 90 18C116 30 130 44 148 50L136 55H44L32 50Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M82 19L90 12L98 19" stroke="#FDE68A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lotus blossom accent -->
+  <ellipse cx="52" cy="116" rx="8" ry="3.5" fill="#FB923C" stroke="#FFF7ED" stroke-width="1.6"/>
+  <ellipse cx="128" cy="115" rx="9" ry="3.5" fill="#FB923C" stroke="#FFF7ED" stroke-width="1.6"/>
+</svg>

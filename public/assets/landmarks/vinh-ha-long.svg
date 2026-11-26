@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Warm sun -->
+  <circle cx="136" cy="34" r="14" fill="#FDE68A" stroke="#FFF7ED" stroke-width="2.2"/>
+  <!-- Distant karst islands -->
+  <path d="M18 98L34 54L46 66L58 46L74 98H18Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M64 98L82 36L96 52L112 42L126 98H64Z" fill="#EA580C" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M118 98L134 62L146 72L160 58L168 98H118Z" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Junk boat & ribbed sails -->
+  <path d="M54 102H106L98 112H62L54 102Z" fill="#7C2D12" stroke="#FFF7ED" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M74 102V64L96 74L92 100H74Z" fill="#FEF3C7" stroke="#FFF7ED" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M74 78H93M74 88H92" stroke="#EA580C" stroke-width="1.5"/>
+  <!-- Bay water waves -->
+  <path d="M14 108C34 103 54 113 74 108C94 103 114 113 134 108C148 104 160 107 168 109" stroke="#FFF7ED" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M26 120C48 115 70 125 92 120C114 115 136 125 156 120" stroke="#FDE68A" stroke-width="2" stroke-linecap="round"/>
+</svg>

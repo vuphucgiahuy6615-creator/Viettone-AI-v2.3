@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Limestone cave mountain -->
+  <path d="M16 116L38 42L68 28L114 24L148 48L164 116H16Z" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Grand cave opening -->
+  <path d="M46 116C48 64 72 48 90 48C108 48 132 64 134 116H46Z" fill="#431407" stroke="#FFF7ED" stroke-width="2.5"/>
+  <!-- Stalactites -->
+  <path d="M68 54L73 74L78 52M88 49L93 78L98 49M108 55L112 72L116 58" fill="#FDBA74" stroke="#FFF7ED" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- Underground river + tiny boat -->
+  <path d="M36 116C62 110 118 110 144 116" stroke="#FDE68A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M74 106H106L100 113H80L74 106Z" fill="#FB923C" stroke="#FFF7ED" stroke-width="2" stroke-linejoin="round"/>
+</svg>

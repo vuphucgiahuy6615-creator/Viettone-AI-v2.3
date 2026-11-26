@@ -1,0 +1,623 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Nunito', 'Be Vietnam Pro', sans-serif;
+
+  /* Brand & Accent Palette (Strictly audited from existing VietTone UI) */
+  --vt-red: #EF233C;
+  --vt-red-50: #fef2f2;
+  --vt-red-100: #fee2e2;
+  --vt-red-200: #fecaca;
+  --vt-red-400: #f87171;
+  --vt-red-500: #ef4444;
+  --vt-red-600: #dc2626;
+  --vt-red-700: #b91c1c;
+  --vt-red-900: #7f1d1d;
+
+  --vt-rose: #F43F5E;
+
+  --vt-orange: #FF9100;
+  --vt-orange-100: #ffedd5;
+  --vt-orange-200: #fed7aa;
+  --vt-orange-400: #fb923c;
+  --vt-orange-500: #f97316;
+
+  --vt-amber-vivid: #FFB703;
+  --vt-amber-50: #fffbeb;
+  --vt-amber-100: #fef3c7;
+  --vt-amber-200: #fde68a;
+  --vt-amber-300: #fcd34d;
+  --vt-amber-400: #fbbf24;
+  --vt-amber-500: #f59e0b;
+  --vt-amber-600: #d97706;
+  --vt-amber-800: #92400e;
+  --vt-amber-900: #78350f;
+
+  --vt-yellow: #FEF08A;
+  --vt-yellow-200: #fef08a;
+  --vt-yellow-300: #fde047;
+
+  /* Success Palette (Existing Emerald hues, zero Duolingo green) */
+  --vt-success: #047857;
+  --vt-success-100: #d1fae5;
+  --vt-success-300: #6ee7b7;
+  --vt-success-400: #34d399;
+  --vt-success-500: #10b981;
+  --vt-success-600: #059669;
+  --vt-success-700: #047857;
+  --vt-success-800: #065f46;
+
+  /* Modal Accent Neutrals & Info hues already in immersive modals */
+  --vt-cyan-50: #ecfeff;
+  --vt-cyan-100: #cffafe;
+  --vt-cyan-200: #a5f3fc;
+  --vt-cyan-400: #22d3ee;
+  --vt-cyan-600: #0891b2;
+  --vt-cyan-700: #0e7490;
+
+  --vt-blue-50: #eff6ff;
+  --vt-blue-100: #dbeafe;
+  --vt-blue-600: #2563eb;
+
+  --vt-indigo-500: #6366f1;
+
+  /* Surfaces & Neutrals */
+  --vt-surface: rgba(2, 6, 23, 0.5);
+  --vt-surface-dark: rgba(2, 6, 23, 0.6);
+  --vt-surface-soft: rgba(255, 255, 255, 0.1);
+  --vt-surface-hover: rgba(15, 23, 42, 0.6);
+  --vt-surface-modal: #ffffff;
+  --vt-slate-50: #f8fafc;
+  --vt-slate-100: #f1f5f9;
+  --vt-slate-200: #e2e8f0;
+  --vt-slate-300: #cbd5e1;
+  --vt-slate-400: #94a3b8;
+  --vt-slate-500: #64748b;
+  --vt-slate-600: #475569;
+  --vt-slate-700: #334155;
+  --vt-slate-800: #1e293b;
+  --vt-slate-900: #0f172a;
+  --vt-slate-950: #020617;
+
+  /* 3D Bottom-Border Shadow Variants (Strictly color-mix darkened existing colors) */
+  --vt-red-shadow: color-mix(in srgb, var(--vt-red) 75%, black);
+  --vt-orange-shadow: color-mix(in srgb, var(--vt-orange) 75%, black);
+  --vt-amber-shadow: color-mix(in srgb, var(--vt-amber-500) 75%, black);
+  --vt-yellow-shadow: color-mix(in srgb, var(--vt-yellow) 75%, black);
+  --vt-success-shadow: color-mix(in srgb, var(--vt-success) 75%, black);
+  --vt-success-500-shadow: color-mix(in srgb, var(--vt-success-500) 75%, black);
+  --vt-surface-shadow: color-mix(in srgb, var(--vt-slate-900) 75%, black);
+  --vt-white-shadow: color-mix(in srgb, rgba(255, 255, 255, 0.28) 75%, black);
+  --vt-slate-shadow: color-mix(in srgb, var(--vt-slate-300) 75%, black);
+  --vt-cyan-shadow: color-mix(in srgb, var(--vt-cyan-600) 75%, black);
+}
+
+/* ==================== Tactile 3D Utility Classes ==================== */
+
+.vt-btn-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  border-style: solid;
+  border-width: 1px 1px 4px 1px;
+  transform: translateY(0);
+  transition: transform 100ms ease, border-bottom-width 100ms ease, margin-bottom 100ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.vt-btn-3d:active:not(:disabled) {
+  border-bottom-width: 0px;
+  margin-bottom: 4px;
+  transform: translateY(4px);
+}
+
+.vt-btn-3d:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vt-node {
+  border-style: solid;
+  border-width: 2px 2px 8px 2px;
+  transform-origin: bottom center;
+  transform: translateY(0) scaleY(1);
+  transition:
+    transform 140ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-bottom-width 140ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 180ms ease,
+    filter 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.vt-node:hover:not(:disabled),
+.vt-node:focus-visible:not(:disabled) {
+  border-bottom-width: 3px;
+  transform: translateY(2px) scaleY(0.92);
+  filter: brightness(1.08);
+  border-top-color: rgba(255, 236, 179, 0.98);
+  border-left-color: rgba(255, 236, 179, 0.95);
+  border-right-color: rgba(255, 236, 179, 0.95);
+  box-shadow:
+    0 0 22px rgba(255, 165, 0, 0.85),
+    0 0 42px rgba(255, 145, 0, 0.55),
+    inset 0 0 14px rgba(255, 255, 255, 0.42);
+}
+
+.vt-node:active:not(:disabled) {
+  border-bottom-width: 1px;
+  transform: translateY(4px) scaleY(0.87);
+  filter: brightness(1.14);
+  box-shadow:
+    0 0 26px rgba(255, 183, 3, 0.95),
+    0 0 48px rgba(255, 145, 0, 0.65),
+    inset 0 0 16px rgba(255, 255, 255, 0.5);
+}
+
+.vt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  border-style: solid;
+  border-width: 1px 1px 4px 1px;
+  transform: translateY(0);
+  transition: transform 100ms ease, border-bottom-width 100ms ease, margin-bottom 100ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.vt-btn:active:not(:disabled) {
+  border-bottom-width: 0px;
+  margin-bottom: 4px;
+  transform: translateY(4px);
+}
+
+.vt-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vt-btn:focus-visible,
+.vt-btn-3d:focus-visible,
+.vt-node:focus-visible,
+.vt-card:focus-visible,
+.vt-chip:focus-visible {
+  outline: 2px solid var(--vt-amber-300);
+  outline-offset: 2px;
+}
+
+.vt-btn-primary {
+  background-image: linear-gradient(to right, var(--vt-red), var(--vt-orange));
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-bottom-color: var(--vt-red-shadow);
+  box-shadow: 0 6px 18px rgba(239, 35, 60, 0.35);
+}
+
+.vt-btn-primary:hover:not(:disabled) {
+  box-shadow: 0 8px 24px rgba(255, 145, 0, 0.45);
+}
+
+.vt-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-bottom-color: var(--vt-white-shadow);
+  backdrop-filter: blur(12px);
+}
+
+.vt-btn-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.vt-btn-secondary-light {
+  background-color: var(--vt-slate-100);
+  color: var(--vt-slate-700);
+  border-color: var(--vt-slate-200);
+  border-bottom-color: var(--vt-slate-shadow);
+}
+
+.vt-btn-secondary-light:hover:not(:disabled) {
+  background-color: var(--vt-slate-200);
+}
+
+.vt-btn-ghost {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  border-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.vt-btn-ghost:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.vt-card {
+  border-radius: 1.5rem;
+  border-style: solid;
+  border-width: 2px 2px 4px 2px;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: var(--vt-surface-shadow);
+  background-color: var(--vt-surface);
+  backdrop-filter: blur(20px);
+}
+
+.vt-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  border-style: solid;
+  border-width: 1px 1px 3px 1px;
+  user-select: none;
+}
+
+/* ==================== Tactile Keyframes ==================== */
+
+@keyframes vt-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.86) translateY(6px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.04) translateY(-1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes vt-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes vt-bounce-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vt-wiggle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(2.4deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(1.5deg);
+  }
+}
+
+@keyframes vt-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes vt-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.animate-vt-pop {
+  animation: vt-pop 320ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-vt-shake {
+  animation: vt-shake 420ms ease-in-out both;
+}
+
+.animate-vt-bounce-in {
+  animation: vt-bounce-in 360ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-vt-bounce {
+  animation: vt-bounce 1.8s ease-in-out infinite;
+}
+
+.animate-vt-wiggle {
+  animation: vt-wiggle 3.8s ease-in-out infinite;
+}
+
+.animate-vt-breathe {
+  animation: vt-breathe 3.4s ease-in-out infinite;
+}
+
+/* ==================== Legacy & Bé Lạc Mascot Animations ==================== */
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes listening-wave {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+}
+
+/* 1. INTRO: Scale/fade in, bay lên 25px, nghiêng vẫy chào, trở về vị trí trung tâm (~2s) */
+@keyframes be-lac-intro {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.88) rotate(0deg);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05) rotate(-4.5deg);
+  }
+  50% {
+    transform: translateY(4px) scale(0.98) rotate(4deg);
+  }
+  75% {
+    transform: translateY(-5px) scale(1.02) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+}
+
+/* 2. IDLE: Bay bổng nhẹ nhàng 5-8px, chu kỳ 3.8s, nghiêng nhẹ 2 độ */
+@keyframes be-lac-idle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-7px) rotate(2.2deg);
+  }
+  70% {
+    transform: translateY(-3px) rotate(-2deg);
+  }
+}
+
+/* 3. SHADOW: Co giãn và mờ dần nhịp nhàng khi Bé Lạc bay cao/thấp */
+@keyframes be-lac-shadow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.38;
+  }
+  30% {
+    transform: scale(0.8);
+    opacity: 0.18;
+  }
+  70% {
+    transform: scale(0.92);
+    opacity: 0.28;
+  }
+}
+
+/* 4. LISTENING: Nghiêng nhẹ về phía mic, chú ý chăm chú */
+@keyframes be-lac-listening {
+  0%, 100% {
+    transform: translateY(3px) rotate(-3.5deg) scale(1.03);
+  }
+  50% {
+    transform: translateY(5px) rotate(-1.5deg) scale(1.05);
+  }
+}
+
+/* 5. THINKING: Nghiêng người suy nghĩ, lắc lư nhẹ */
+@keyframes be-lac-thinking {
+  0%, 100% {
+    transform: translateY(0px) rotate(3.5deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(1.5deg);
+  }
+}
+
+/* 6. SUCCESS: Nhún lên vui mừng, xoay nghiêng vài độ rồi tiếp đất */
+@keyframes be-lac-success {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-22px) scale(1.12) rotate(4deg);
+  }
+  45% {
+    transform: translateY(3px) scale(0.96) rotate(-3deg);
+  }
+  70% {
+    transform: translateY(-10px) scale(1.05) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+/* 7. UNCERTAIN: Nghiêng đầu nhẹ suy nghĩ, không buồn bã */
+@keyframes be-lac-uncertain {
+  0%, 100% {
+    transform: translateY(0) rotate(-4.5deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(-1.5deg);
+  }
+}
+
+/* 8. HEADPHONE PULSE: Vòng sóng âm tai nghe */
+@keyframes be-lac-headphone-pulse {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+}
+
+/* 9. SPARKLE STARS: Ngôi sao vàng ăn mừng nhấp nháy */
+@keyframes be-lac-sparkle {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+/* Utility Animation Classes */
+.animate-float-gentle {
+  animation: float-gentle 3.8s ease-in-out infinite;
+}
+
+.animate-listening-wave {
+  animation: listening-wave 2s ease-in-out infinite;
+}
+
+.animate-be-lac-intro {
+  animation: be-lac-intro 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-be-lac-idle {
+  animation: be-lac-idle 3.8s ease-in-out infinite;
+}
+
+.animate-be-lac-shadow {
+  animation: be-lac-shadow 3.8s ease-in-out infinite;
+}
+
+.animate-be-lac-listening {
+  animation: be-lac-listening 2.2s ease-in-out infinite;
+}
+
+.animate-be-lac-thinking {
+  animation: be-lac-thinking 2.5s ease-in-out infinite;
+}
+
+.animate-be-lac-success {
+  animation: be-lac-success 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-be-lac-uncertain {
+  animation: be-lac-uncertain 2.8s ease-in-out infinite;
+}
+
+.animate-be-lac-headphone-pulse {
+  animation: be-lac-headphone-pulse 1.4s ease-in-out infinite;
+}
+
+.animate-be-lac-sparkle {
+  animation: be-lac-sparkle 1.2s ease-in-out infinite;
+}
+
+/* Legacy aliases for backwards compatibility */
+.animate-cool-sway {
+  animation: be-lac-idle 3.8s ease-in-out infinite;
+}
+.animate-listening-groove {
+  animation: be-lac-listening 2.2s ease-in-out infinite;
+}
+.animate-success-bounce {
+  animation: be-lac-success 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.animate-thoughtful-tilt {
+  animation: be-lac-uncertain 2.8s ease-in-out infinite;
+}
+.animate-headphone-pulse {
+  animation: be-lac-headphone-pulse 1.4s ease-in-out infinite;
+}
+
+/* Tôn trọng người dùng giảm chuyển động (prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  .vt-btn,
+  .vt-btn-3d,
+  .vt-node,
+  .animate-vt-pop,
+  .animate-vt-shake,
+  .animate-vt-bounce-in,
+  .animate-vt-bounce,
+  .animate-vt-wiggle,
+  .animate-vt-breathe,
+  .animate-float-gentle,
+  .animate-listening-wave,
+  .animate-cool-sway,
+  .animate-listening-groove,
+  .animate-success-bounce,
+  .animate-thoughtful-tilt,
+  .animate-headphone-pulse,
+  .animate-be-lac-intro,
+  .animate-be-lac-idle,
+  .animate-be-lac-shadow,
+  .animate-be-lac-listening,
+  .animate-be-lac-thinking,
+  .animate-be-lac-success,
+  .animate-be-lac-uncertain,
+  .animate-be-lac-headphone-pulse,
+  .animate-be-lac-sparkle {
+    animation: none !important;
+    transition: none !important;
+  }
+}

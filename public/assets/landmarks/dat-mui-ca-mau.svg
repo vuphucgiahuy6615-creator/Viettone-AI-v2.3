@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Southern sea waves -->
+  <path d="M14 114C42 108 70 120 98 114C126 108 148 118 166 114" stroke="#FFF7ED" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Cape shoreline + mangrove silhouette -->
+  <path d="M22 106C54 96 126 96 158 106H22Z" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.2"/>
+  <!-- Ship-prow monument pointing south -->
+  <path d="M46 102L134 102L148 70L68 80L46 102Z" fill="#EA580C" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Mast & sail -->
+  <line x1="96" y1="78" x2="96" y2="24" stroke="#FFF7ED" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M96 26L134 62L96 68V26Z" fill="#FDE68A" stroke="#FFF7ED" stroke-width="2.2" stroke-linejoin="round"/>
+  <!-- Red flag at peak -->
+  <path d="M96 24H114V34H96V24Z" fill="#EF233C" stroke="#FFF7ED" stroke-width="1.8"/>
+  <!-- Warm sun -->
+  <circle cx="42" cy="40" r="11" fill="#FDE68A" stroke="#FFF7ED" stroke-width="2"/>
+</svg>

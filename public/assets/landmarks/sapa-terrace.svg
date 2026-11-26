@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Mountain backdrop -->
+  <path d="M16 112L54 34L86 74L122 28L164 112H16Z" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="90" cy="36" r="11" fill="#FDE68A" stroke="#FFF7ED" stroke-width="2"/>
+  <!-- Terraced rice fields -->
+  <path d="M22 114C48 90 108 86 158 114H22Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.2"/>
+  <path d="M28 114C56 96 106 94 148 114" fill="#EA580C" stroke="#FFF7ED" stroke-width="2.2"/>
+  <path d="M36 114C64 102 104 100 138 114" fill="#FB923C" stroke="#FFF7ED" stroke-width="2.2"/>
+  <path d="M48 114C72 108 102 107 126 114" fill="#FDBA74" stroke="#FFF7ED" stroke-width="2"/>
+  <!-- Stilt house accent -->
+  <rect x="116" y="72" width="24" height="14" rx="2" fill="#FDE68A" stroke="#FFF7ED" stroke-width="2"/>
+  <path d="M111 74L128 60L145 74H111Z" fill="#EA580C" stroke="#FFF7ED" stroke-width="2" stroke-linejoin="round"/>
+</svg>

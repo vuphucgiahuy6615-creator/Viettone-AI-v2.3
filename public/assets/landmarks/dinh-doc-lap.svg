@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Lawn base -->
+  <rect x="18" y="114" width="144" height="10" rx="4" fill="#9A3412" stroke="#FFF7ED" stroke-width="2"/>
+  <!-- Lower hall & portico -->
+  <rect x="26" y="76" width="128" height="38" rx="2" fill="#FDE68A" stroke="#FFF7ED" stroke-width="2.5"/>
+  <rect x="74" y="84" width="32" height="30" fill="#7C2D12" stroke="#FFF7ED" stroke-width="2"/>
+  <!-- Upper horizontal louver facade -->
+  <rect x="34" y="44" width="112" height="32" rx="2" fill="#FB923C" stroke="#FFF7ED" stroke-width="2.5"/>
+  <path d="M44 52H136M44 60H136M44 68H136" stroke="#FFF7ED" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Roofline + Flagpole -->
+  <rect x="24" y="38" width="132" height="7" rx="2" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.2"/>
+  <line x1="90" y1="38" x2="90" y2="16" stroke="#FFF7ED" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M90 17H112V29H90V17Z" fill="#EF233C" stroke="#FFF7ED" stroke-width="1.8"/>
+</svg>

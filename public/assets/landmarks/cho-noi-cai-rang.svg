@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Mekong river ripples -->
+  <path d="M16 112C44 106 72 118 100 112C128 106 148 116 168 112" stroke="#FFF7ED" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Foreground sampan boat with bamboo cay beo pole -->
+  <path d="M26 94C42 108 102 108 118 94L108 86H36L26 94Z" fill="#9A3412" stroke="#FFF7ED" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Fruit baskets inside boat -->
+  <circle cx="54" cy="84" r="7" fill="#FDE68A" stroke="#FFF7ED" stroke-width="1.8"/>
+  <circle cx="68" cy="83" r="8" fill="#FB923C" stroke="#FFF7ED" stroke-width="1.8"/>
+  <circle cx="84" cy="85" r="7" fill="#EA580C" stroke="#FFF7ED" stroke-width="1.8"/>
+  <!-- Bamboo cay beo pole displaying fruits -->
+  <line x1="94" y1="88" x2="108" y2="32" stroke="#FFF7ED" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="106" cy="40" r="6" fill="#FDE68A" stroke="#FFF7ED" stroke-width="1.8"/>
+  <circle cx="101" cy="52" r="5" fill="#FB923C" stroke="#FFF7ED" stroke-width="1.8"/>
+  <!-- Second smaller sampan -->
+  <path d="M112 96C124 104 152 104 162 96L156 90H118L112 96Z" fill="#C2410C" stroke="#FFF7ED" stroke-width="2.2" stroke-linejoin="round"/>
+  <!-- Conical hat (non la) -->
+  <path d="M126 84L138 72L150 84H126Z" fill="#FEF3C7" stroke="#FFF7ED" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>

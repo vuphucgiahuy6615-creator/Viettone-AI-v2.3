@@ -1,0 +1,501 @@
+import {
+  MinimalPairItem,
+  PracticeWordItem,
+  RegionalProfile,
+  ToneId,
+  VocabularyStageId,
+} from '../types';
+
+export const REGIONAL_PROFILES: RegionalProfile[] = [
+  {
+    id: 'bac',
+    name: 'Miền Bắc (Chuẩn Hà Nội)',
+    shortName: 'Miền Bắc',
+    description: 'Phân biệt đầy đủ cả 6 thanh điệu, tách bạch rõ thanh Hỏi và thanh Ngã.',
+    toneCharacteristics:
+      'Thanh Hỏi xuống thấp rồi lượn nhẹ; thanh Ngã có ngắt thanh quản rõ ở giữa trước khi vút cao.',
+  },
+  {
+    id: 'trung',
+    name: 'Miền Trung (Huế · Bắc Trung Bộ)',
+    shortName: 'Miền Trung',
+    description: 'Âm vực trầm ấm, thanh Hỏi và thanh Ngã thường đi xuống sâu hơn và ngân êm.',
+    toneCharacteristics:
+      'Thanh Sắc gọn, thanh Hỏi và thanh Ngã hạ thấp sâu ở giữa từ; thanh Nặng trầm và kéo nhẹ hơn.',
+  },
+  {
+    id: 'nam',
+    name: 'Miền Nam (Sài Gòn · Nam Bộ)',
+    shortName: 'Miền Nam',
+    description: 'Ngữ điệu mềm mại, thanh Hỏi và thanh Ngã thường đọc gần tương đồng dạng võng lên.',
+    toneCharacteristics:
+      'Thanh Ngang cao vừa và đều, thanh Sắc vút mượt mà; thanh Hỏi và thanh Ngã cùng mang đường võng đi xuống rồi lên.',
+  },
+];
+
+export const STAGE_METADATA: Record<
+  VocabularyStageId,
+  {
+    id: VocabularyStageId;
+    title: string;
+    subtitle: string;
+    badge: string;
+  }
+> = {
+  stage1_ma: {
+    id: 'stage1_ma',
+    title: 'Làm quen 6 thanh điệu với "ma"',
+    subtitle: 'PHẦN 1 · CỬA 1',
+    badge: 'Hybrid AI + F0',
+  },
+  stage2_syllables: {
+    id: 'stage2_syllables',
+    title: 'Mở rộng âm tiết (ba · la · ca)',
+    subtitle: 'PHẦN 2 · CỬA 2',
+    badge: 'Phân tích F0 chuẩn',
+  },
+  stage3_compounds: {
+    id: 'stage3_compounds',
+    title: 'Từ ghép đời sống quen thuộc',
+    subtitle: 'PHẦN 3 · CỬA 3',
+    badge: 'Từ vựng thực tế',
+  },
+};
+
+export const STAGE1_MA_WORDS: PracticeWordItem[] = [
+  {
+    id: 'ma_ngang',
+    word: 'ma',
+    targetSyllable: 'ma',
+    toneId: 'ngang',
+    stageId: 'stage1_ma',
+    syllableFamily: 'ma',
+    meaning: 'Bóng ma / âm thanh ngang chuẩn',
+    tip: 'Giữ giọng đều và ngang, không lên không xuống.',
+    evaluationMode: 'hybrid',
+  },
+  {
+    id: 'ma_sac',
+    word: 'má',
+    targetSyllable: 'má',
+    toneId: 'sac',
+    stageId: 'stage1_ma',
+    syllableFamily: 'ma',
+    meaning: 'Gò má / mẹ (miền Nam)',
+    tip: 'Đẩy cao độ vút lên nhanh về cuối âm.',
+    evaluationMode: 'hybrid',
+  },
+  {
+    id: 'ma_huyen',
+    word: 'mà',
+    targetSyllable: 'mà',
+    toneId: 'huyen',
+    stageId: 'stage1_ma',
+    syllableFamily: 'ma',
+    meaning: 'Nhưng mà',
+    tip: 'Thả lỏng cổ họng, hạ giọng trầm xuống đều.',
+    evaluationMode: 'hybrid',
+  },
+  {
+    id: 'ma_hoi',
+    word: 'mả',
+    targetSyllable: 'mả',
+    toneId: 'hoi',
+    stageId: 'stage1_ma',
+    syllableFamily: 'ma',
+    meaning: 'Ngôi mộ / mồ mả',
+    tip: 'Hạ giọng xuống trũng rồi uốn nhẹ lên như đang hỏi.',
+    evaluationMode: 'hybrid',
+  },
+  {
+    id: 'ma_nga',
+    word: 'mã',
+    targetSyllable: 'mã',
+    toneId: 'nga',
+    stageId: 'stage1_ma',
+    syllableFamily: 'ma',
+    meaning: 'Con ngựa / mật mã',
+    tip: 'Đẩy giọng lên, khựng nhẹ ở cổ họng rồi vút cao.',
+    evaluationMode: 'hybrid',
+  },
+  {
+    id: 'ma_nang',
+    word: 'mạ',
+    targetSyllable: 'mạ',
+    toneId: 'nang',
+    stageId: 'stage1_ma',
+    syllableFamily: 'ma',
+    meaning: 'Cây mạ non / mẹ (miền Trung)',
+    tip: 'Hạ nhanh xuống thấp và ngắt gọn dứt khoát.',
+    evaluationMode: 'hybrid',
+  },
+];
+
+export const STAGE2_SYLLABLE_FAMILIES: Array<{
+  family: string;
+  label: string;
+  words: PracticeWordItem[];
+}> = [
+  {
+    family: 'ba',
+    label: 'Bộ âm "ba"',
+    words: [
+      {
+        id: 'ba_ngang',
+        word: 'ba',
+        targetSyllable: 'ba',
+        toneId: 'ngang',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ba',
+        meaning: 'Số 3 / bố (miền Nam)',
+        tip: 'Giữ âm "ba" ngang đều ở tầm trung.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ba_sac',
+        word: 'bá',
+        targetSyllable: 'bá',
+        toneId: 'sac',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ba',
+        meaning: 'Bá tước / chú bác',
+        tip: 'Bắt đầu vừa phải rồi đẩy cao độ vút lên rõ ở cuối.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ba_huyen',
+        word: 'bà',
+        targetSyllable: 'bà',
+        toneId: 'huyen',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ba',
+        meaning: 'Bà nội / bà ngoại',
+        tip: 'Hạ giọng xuống trầm đều đặn và êm ái.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ba_hoi',
+        word: 'bả',
+        targetSyllable: 'bả',
+        toneId: 'hoi',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ba',
+        meaning: 'Bà ấy / bả vai',
+        tip: 'Võng giọng xuống thấp rồi lượn nhẹ lên.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ba_nga',
+        word: 'bã',
+        targetSyllable: 'bã',
+        toneId: 'nga',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ba',
+        meaning: 'Bã mía / tơi bã',
+        tip: 'Khựng nhẹ thanh quản rồi vút lên cao.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ba_nang',
+        word: 'bạ',
+        targetSyllable: 'bạ',
+        toneId: 'nang',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ba',
+        meaning: 'Danh bạ / làm bạ',
+        tip: 'Rơi dốc và ngắt âm dứt khoát.',
+        evaluationMode: 'f0_contour',
+      },
+    ],
+  },
+  {
+    family: 'la',
+    label: 'Bộ âm "la"',
+    words: [
+      {
+        id: 'la_ngang',
+        word: 'la',
+        targetSyllable: 'la',
+        toneId: 'ngang',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'la',
+        meaning: 'La hét / nốt La',
+        tip: 'Ngân âm "la" thẳng đều, không dao động.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'la_sac',
+        word: 'lá',
+        targetSyllable: 'lá',
+        toneId: 'sac',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'la',
+        meaning: 'Chiếc lá xanh',
+        tip: 'Vút âm "lá" lên cao dứt khoát.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'la_huyen',
+        word: 'là',
+        targetSyllable: 'là',
+        toneId: 'huyen',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'la',
+        meaning: 'Là học sinh / bàn là',
+        tip: 'Hạ giọng thoải dần xuống trầm.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'la_hoi',
+        word: 'lả',
+        targetSyllable: 'lả',
+        toneId: 'hoi',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'la',
+        meaning: 'Mệt lả / lả lướt',
+        tip: 'Võng xuống giữa âm tiết rồi uốn nhẹ lên.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'la_nga',
+        word: 'lã',
+        targetSyllable: 'lã',
+        toneId: 'nga',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'la',
+        meaning: 'Nước lã',
+        tip: 'Ngắt nhẹ giữa âm rồi đẩy cao lên.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'la_nang',
+        word: 'lạ',
+        targetSyllable: 'lạ',
+        toneId: 'nang',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'la',
+        meaning: 'Mới lạ',
+        tip: 'Nhấn xuống đáy giọng và ngắt ngắn.',
+        evaluationMode: 'f0_contour',
+      },
+    ],
+  },
+  {
+    family: 'ca',
+    label: 'Bộ âm "ca"',
+    words: [
+      {
+        id: 'ca_ngang',
+        word: 'ca',
+        targetSyllable: 'ca',
+        toneId: 'ngang',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ca',
+        meaning: 'Bài ca / chiếc ca',
+        tip: 'Giữ âm "ca" phẳng đều và rõ.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ca_sac',
+        word: 'cá',
+        targetSyllable: 'cá',
+        toneId: 'sac',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ca',
+        meaning: 'Con cá vàng',
+        tip: 'Đẩy giọng vút lên cao ở cuối từ.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ca_huyen',
+        word: 'cà',
+        targetSyllable: 'cà',
+        toneId: 'huyen',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ca',
+        meaning: 'Quả cà chua',
+        tip: 'Hạ giọng trầm dần, nhẹ nhàng.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ca_hoi',
+        word: 'cả',
+        targetSyllable: 'cả',
+        toneId: 'hoi',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ca',
+        meaning: 'Tất cả / anh cả',
+        tip: 'Hạ võng xuống thấp rồi lượn lên.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ca_nga',
+        word: 'cã',
+        targetSyllable: 'cã',
+        toneId: 'nga',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ca',
+        meaning: 'Âm luyện thanh ngã',
+        tip: 'Khựng nhẹ cổ họng rồi vút cao rõ.',
+        evaluationMode: 'f0_contour',
+      },
+      {
+        id: 'ca_nang',
+        word: 'cạ',
+        targetSyllable: 'cạ',
+        toneId: 'nang',
+        stageId: 'stage2_syllables',
+        syllableFamily: 'ca',
+        meaning: 'Cọ cạ',
+        tip: 'Rơi nhanh và ngắt âm dứt khoát.',
+        evaluationMode: 'f0_contour',
+      },
+    ],
+  },
+];
+
+export const STAGE3_COMPOUND_WORDS: PracticeWordItem[] = [
+  {
+    id: 'comp_caphe',
+    word: 'cà phê',
+    targetSyllable: 'phê',
+    toneId: 'ngang',
+    stageId: 'stage3_compounds',
+    meaning: 'Ly cà phê (trọng tâm thanh ngang cuối)',
+    tip: 'Hạ trầm chữ "cà" rồi giữ ngang phẳng chữ "phê".',
+    evaluationMode: 'f0_contour',
+  },
+  {
+    id: 'comp_banhmi',
+    word: 'bánh mì',
+    targetSyllable: 'mì',
+    toneId: 'huyen',
+    stageId: 'stage3_compounds',
+    meaning: 'Ổ bánh mì (trọng tâm thanh huyền)',
+    tip: 'Đọc cao rõ chữ "bánh" rồi hạ trầm êm chữ "mì".',
+    evaluationMode: 'f0_contour',
+  },
+  {
+    id: 'comp_cogiao',
+    word: 'cô giáo',
+    targetSyllable: 'giáo',
+    toneId: 'sac',
+    stageId: 'stage3_compounds',
+    meaning: 'Cô giáo (trọng tâm thanh sắc)',
+    tip: 'Giữ ngang chữ "cô" rồi đẩy vút cao chữ "giáo".',
+    evaluationMode: 'f0_contour',
+  },
+  {
+    id: 'comp_tuhai',
+    word: 'câu hỏi',
+    targetSyllable: 'hỏi',
+    toneId: 'hoi',
+    stageId: 'stage3_compounds',
+    meaning: 'Câu hỏi (trọng tâm thanh hỏi)',
+    tip: 'Giữ đều chữ "câu" rồi lượn võng nhẹ chữ "hỏi".',
+    evaluationMode: 'f0_contour',
+  },
+  {
+    id: 'comp_xango',
+    word: 'xã hội',
+    targetSyllable: 'xã',
+    toneId: 'nga',
+    stageId: 'stage3_compounds',
+    meaning: 'Xã hội (thanh ngã + thanh nặng)',
+    tip: 'Chú ý bật thanh ngã ở "xã" và ngắt dứt khoát ở "hội".',
+    evaluationMode: 'f0_contour',
+  },
+  {
+    id: 'comp_hocsinh',
+    word: 'học sinh',
+    targetSyllable: 'học',
+    toneId: 'nang',
+    stageId: 'stage3_compounds',
+    meaning: 'Bạn học sinh (trọng tâm thanh nặng)',
+    tip: 'Ngắt gọn dứt khoát chữ "học" rồi giữ ngang chữ "sinh".',
+    evaluationMode: 'f0_contour',
+  },
+];
+
+export const ALL_PRACTICE_WORDS: PracticeWordItem[] = [
+  ...STAGE1_MA_WORDS,
+  ...STAGE2_SYLLABLE_FAMILIES.flatMap((f) => f.words),
+  ...STAGE3_COMPOUND_WORDS,
+];
+
+export function findPracticeWordById(id: string): PracticeWordItem | undefined {
+  return ALL_PRACTICE_WORDS.find((item) => item.id === id);
+}
+
+export function getToneDefaultWordItem(toneId: ToneId): PracticeWordItem {
+  return STAGE1_MA_WORDS.find((w) => w.toneId === toneId) || STAGE1_MA_WORDS[0];
+}
+
+export const MINIMAL_PAIRS: MinimalPairItem[] = [
+  {
+    id: 'hoi_nga_ma',
+    title: 'Hỏi – Ngã (mả vs mã)',
+    subtitle: 'Cặp thanh dễ nhầm nhất',
+    toneA: 'hoi',
+    wordA: 'mả',
+    toneB: 'nga',
+    wordB: 'mã',
+    contrastHint:
+      'Thanh Hỏi (mả) hạ giọng xuống võng rồi lượn nhẹ lên; thanh Ngã (mã) có điểm khựng ngắt thanh quản rồi vút lên rất cao.',
+  },
+  {
+    id: 'huyen_nang_ma',
+    title: 'Huyền – Nặng (mà vs mạ)',
+    subtitle: 'Khác biệt độ dài & điểm ngắt',
+    toneA: 'huyen',
+    wordA: 'mà',
+    toneB: 'nang',
+    wordB: 'mạ',
+    contrastHint:
+      'Thanh Huyền (mà) hạ xuống chậm và ngân dài êm ái; thanh Nặng (mạ) rơi nhanh xuống đáy và ngắt âm dứt khoát.',
+  },
+  {
+    id: 'sac_nga_ma',
+    title: 'Sắc – Ngã (má vs mã)',
+    subtitle: 'Đều đi lên nhưng khác độ gãy',
+    toneA: 'sac',
+    wordA: 'má',
+    toneB: 'nga',
+    wordB: 'mã',
+    contrastHint:
+      'Thanh Sắc (má) đi lên liền mạch từ đầu tới cuối; thanh Ngã (mã) khựng nhẹ giữa chừng trước khi vút cao.',
+  },
+  {
+    id: 'ngang_huyen_ma',
+    title: 'Ngang – Huyền (ma vs mà)',
+    subtitle: 'Giữ phẳng hay hạ trầm',
+    toneA: 'ngang',
+    wordA: 'ma',
+    toneB: 'huyen',
+    wordB: 'mà',
+    contrastHint:
+      'Thanh Ngang (ma) giữ cao độ thẳng đều; thanh Huyền (mà) thả lỏng giọng hạ thấp dần về cuối.',
+  },
+  {
+    id: 'hoi_nang_ma',
+    title: 'Hỏi – Nặng (mả vs mạ)',
+    subtitle: 'Uốn lượn vs Ngắt đáy',
+    toneA: 'hoi',
+    wordA: 'mả',
+    toneB: 'nang',
+    wordB: 'mạ',
+    contrastHint:
+      'Thanh Hỏi (mả) có nhịp lượn lên ở cuối; thanh Nặng (mạ) rơi thẳng và dừng đột ngột.',
+  },
+  {
+    id: 'hoi_nga_ca',
+    title: 'Hỏi – Ngã mở rộng (cả vs cã)',
+    subtitle: 'Thực hành trên âm "ca"',
+    toneA: 'hoi',
+    wordA: 'cả',
+    toneB: 'nga',
+    wordB: 'cã',
+    contrastHint:
+      'Áp dụng tương tự trên phụ âm "c": "cả" võng êm rồi lên nhẹ, còn "cã" khựng cổ họng rồi vút cao.',
+  },
+];
